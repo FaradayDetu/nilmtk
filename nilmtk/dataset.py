@@ -27,7 +27,7 @@ class DataSet(object):
         See nilm-metadata.readthedocs.org/en/latest/dataset_metadata.html#dataset
     """
 
-    def __init__(self, filename=None, format='HDF'):
+    def __init__(self, filename=None, format='HDF',mode='a'):
         """
         Parameters
         ----------
@@ -41,7 +41,7 @@ class DataSet(object):
         self.buildings = OrderedDict()
         self.metadata = {}
         if filename is not None:
-            self.import_metadata(get_datastore(filename, format))
+            self.import_metadata(get_datastore(filename, format,mode))
 
     def import_metadata(self, store):
         """
